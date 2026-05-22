@@ -1,0 +1,22 @@
+RewriteEngine On
+
+# Keep route compatibility with old paths
+RewriteRule ^home/?$ / [R=301,L]
+RewriteRule ^index/?$ / [R=301,L]
+
+# Force HTTPS (enable when SSL is active)
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Serve directory index files
+DirectoryIndex index.html
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+</IfModule>
