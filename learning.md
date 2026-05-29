@@ -1,6 +1,26 @@
 ## Personal Learning Guide: Running and Testing This Static Website
 
-This project is a static website (HTML + Tailwind CDN + vanilla JS). You do not need a framework dev server.
+This project is a static website (HTML + compiled Tailwind CSS + vanilla JS). You do not need a framework dev server.
+
+## 0) Tailwind build setup (production-safe)
+
+This project now uses a local Tailwind v4 standalone CLI binary instead of CDN.
+
+Build CSS once:
+
+```bash
+cd /Users/devikrishna/Desktop/Projects/Terapaxx_website
+tools/tailwindcss -i ./tailwind.input.css -o ./assets/css/tailwind.css --minify
+```
+
+Watch CSS while editing:
+
+```bash
+cd /Users/devikrishna/Desktop/Projects/Terapaxx_website
+tools/tailwindcss -i ./tailwind.input.css -o ./assets/css/tailwind.css --watch
+```
+
+No .env file is required for this Tailwind setup.
 
 ## 1) How to run locally
 
@@ -29,7 +49,7 @@ Why this is needed:
 2. Resize browser to mobile width (about 375px) and test menu toggle.
 3. Open About and verify text hierarchy and spacing.
 4. Open Gallery and test lightbox open and close.
-5. Open Contact and submit form (after adding Web3Forms key).
+5. Open Contact and test all direct contact cards (Call, Email, WhatsApp, Facebook, LinkedIn, Instagram).
 
 ## 3) Mobile and responsive testing (Chrome)
 
@@ -73,21 +93,15 @@ Files to inspect:
 - sitemap.xml
 - robots.txt
 
-## 6) Web3Forms setup and testing
+## 6) Contact flow testing
 
-Edit:
-- contact-us/index.html
+The contact page is intentionally form-free based on client requirement.
 
-Find this attribute in form:
-- data-web3forms-key="YOUR_WEB3FORMS_ACCESS_KEY"
-
-Replace with real key from Web3Forms dashboard.
-
-Then test:
-1. Submit valid form data.
-2. Check success message on page.
-3. Confirm email arrives in inbox.
-4. Submit invalid or empty fields and verify browser validation.
+Test:
+1. Click Call and confirm phone app intent opens.
+2. Click Email and confirm mail client opens.
+3. Click WhatsApp and confirm chat link opens.
+4. Click Facebook, LinkedIn, and Instagram cards and verify links.
 
 ## 7) Performance check (Lighthouse)
 
@@ -108,7 +122,7 @@ If score is low, first optimize large images.
 
 1. Upload to staging folder first.
 2. Open all routes in staging.
-3. Test form with production Web3Forms key.
+3. Test all contact links on production.
 4. Backup current live site.
 5. Move new site to document root.
 6. Verify SSL and redirect behavior from .htaccess.
@@ -117,7 +131,7 @@ If score is low, first optimize large images.
 ## 9) Common beginner mistakes to avoid
 
 1. Opening HTML directly instead of running local server.
-2. Forgetting to set real Web3Forms key.
+2. Forgetting to rebuild Tailwind CSS after class changes.
 3. Using very large images without compression.
 4. Editing route names without updating nav links.
 5. Deploying to live without staging validation.
@@ -127,6 +141,11 @@ If score is low, first optimize large images.
 Start local server:
 ```bash
 python3 -m http.server 5500
+```
+
+Build production CSS:
+```bash
+tools/tailwindcss -i ./tailwind.input.css -o ./assets/css/tailwind.css --minify
 ```
 
 Stop server:

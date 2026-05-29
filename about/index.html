@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/css/tailwind.css">
   <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
@@ -22,7 +22,7 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-20 items-center justify-between">
         <a href="/" class="flex items-center gap-3" aria-label="Terrapaxx home">
-          <img src="https://www.terrapaxx.com/assets/images/terrapaxx-logo.png" alt="Terrapaxx logo" class="h-11 w-auto" loading="lazy">
+          <img src="/assets/images/terrapaxx-logo.png" alt="Terrapaxx logo" class="h-11 w-auto" loading="lazy">
         </a>
         <nav class="hidden items-center gap-7 md:flex" aria-label="Main navigation">
           <a href="/" data-nav-link class="text-sm font-semibold text-terra-ink transition hover:text-terra-teal">Home</a>
@@ -48,38 +48,114 @@
   </header>
 
   <main id="mainContent" class="pt-24">
+
+    <!-- Hero / Intro -->
     <section class="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
-      <div class="reveal rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200 sm:p-10">
+      <div class="reveal rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200 sm:p-12">
         <p class="text-xs font-bold uppercase tracking-[0.18em] text-terra-teal">About Us</p>
-        <h1 class="mt-3 text-4xl font-extrabold text-terra-deep">Our Journey in Solar and Electrical Innovation</h1>
-        <blockquote class="mt-6 border-l-4 border-terra-gold pl-4 text-slate-700">“The journey of a thousand miles begins with a single step.”</blockquote>
-        <div class="mt-6 space-y-4 text-slate-700">
-          <p>Terrapaxx was established to bring quality and innovative products to market while exceeding customer expectations through reliable service.</p>
-          <p>Our mission is to address energy needs responsibly and build awareness around non-conventional energy sources for a safer future.</p>
-          <p>We focus strongly on solar power systems and after-sales support, ensuring practical, trusted delivery for every customer.</p>
+        <blockquote class="mt-8 border-l-4 border-terra-gold pl-5">
+          <p class="text-lg italic text-slate-600">“The journey of a thousand miles begins with a single step.”</p>
+          <footer class="mt-2 text-sm font-semibold text-slate-500">— Lao Tzu</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="mx-auto max-w-6xl px-4 pb-10 sm:px-6 lg:px-8">
+      <div class="reveal rounded-3xl bg-terra-deep p-8 text-white shadow-md sm:p-12">
+        <h2 class="text-2xl font-bold">Our Story</h2>
+        <div class="mt-5 space-y-4 leading-relaxed text-slate-200">
+          <p>TerrapaxX was born from a simple but powerful idea that every home, every business, and every community deserves access to quality energy solutions that are innovative, reliable, and built for the future.</p>
+          <p>We started with a commitment to go beyond just selling products. From day one, our purpose has been to introduce people to smarter, cleaner, and more sustainable ways to power their lives and to make those solutions genuinely accessible, not just aspirational.</p>
         </div>
       </div>
     </section>
 
+    <!-- What Drives Us -->
+    <section class="mx-auto max-w-6xl px-4 pb-10 sm:px-6 lg:px-8">
+      <div class="reveal rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200 sm:p-12">
+        <h2 class="text-2xl font-bold text-terra-deep">What Drives Us</h2>
+        <div class="mt-5 space-y-4 leading-relaxed text-slate-700">
+          <p>Energy is not a luxury. Yet millions remain unaware of the safer, more cost-effective alternatives available to them today. TerrapaxX exists to close that gap bringing awareness, access, and expertise in non-conventional energy directly to our customers’ doorsteps.</p>
+          <p>We partner with leading product brands to ensure only the best reaches the market backed by the kind of after-sales support that turns a one-time purchase into a long-term relationship.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Focus -->
+    <section class="mx-auto max-w-6xl px-4 pb-10 sm:px-6 lg:px-8">
+      <div class="reveal overflow-hidden rounded-3xl shadow-md">
+        <div class="bg-terra-deep px-8 py-10 sm:px-12">
+          <h2 class="text-2xl font-bold text-white">Our Focus</h2>
+          <p class="mt-4 max-w-3xl leading-relaxed text-slate-200">Solar power sits at the heart of everything we do. From rooftop systems to industrial-scale deployments, TerrapaxX brings together best-in-class products, technical expertise, and end-to-end service so our customers never have to look elsewhere.</p>
+        </div>
+        <div class="grid gap-px bg-slate-100 sm:grid-cols-3">
+          <div class="bg-white px-6 py-5">
+            <p class="text-xs font-bold uppercase tracking-wide text-terra-teal">Products</p>
+            <p class="mt-1 text-sm text-slate-600">Best-in-class solar and electrical brands selected for performance and reliability.</p>
+          </div>
+          <div class="bg-white px-6 py-5">
+            <p class="text-xs font-bold uppercase tracking-wide text-terra-teal">Expertise</p>
+            <p class="mt-1 text-sm text-slate-600">Technical solutioning and project execution by an experienced on-ground team.</p>
+          </div>
+          <div class="bg-white px-6 py-5">
+            <p class="text-xs font-bold uppercase tracking-wide text-terra-teal">Service</p>
+            <p class="mt-1 text-sm text-slate-600">End-to-end support from consultation through installation and after-sales care.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Vision -->
     <section class="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
       <div class="grid gap-6 md:grid-cols-2">
-        <article class="reveal rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-          <h2 class="text-2xl font-bold text-terra-deep">Vision</h2>
-          <p class="mt-3 text-slate-700">Bringing quality and innovation to every doorstep and going beyond customer satisfaction in every service we provide.</p>
+        <article class="reveal rounded-2xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
+          <span class="inline-block rounded-full bg-terra-teal px-4 py-1 text-xs font-bold uppercase tracking-wide text-white">Our Mission</span>
+          <p class="mt-5 leading-relaxed text-slate-700">To empower homes and businesses with innovative, reliable, and sustainable energy solutions making clean energy accessible to all, backed by quality products, expert service, and an unwavering commitment to customer satisfaction.</p>
         </article>
-        <article class="reveal rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-          <h2 class="text-2xl font-bold text-terra-deep">What We Do</h2>
-          <ul class="mt-3 space-y-3 text-slate-700">
-            <li><strong>Product Marketing:</strong> Sales and marketing support for renewable and electrical brands.</li>
-            <li><strong>Sales and Services:</strong> Product supply from proven brands with after-sales support.</li>
-            <li><strong>Technical Solutions:</strong> Single-point solutioning for complete customer needs.</li>
-            <li><strong>Project Management:</strong> Planning, scheduling, and execution of projects.</li>
-          </ul>
+        <article class="reveal rounded-2xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
+          <span class="inline-block rounded-full bg-terra-gold px-4 py-1 text-xs font-bold uppercase tracking-wide text-white">Our Vision</span>
+          <p class="mt-5 leading-relaxed text-slate-700">To bring quality and innovation to every doorstep and to consistently go beyond what our customers expect, in every solution we deliver.</p>
         </article>
       </div>
     </section>
+
   </main>
 
+  <section class="brand-marquee" aria-label="Partner brands">
+    <p class="brand-marquee-heading">Brands We Work With</p>
+    <div class="brand-marquee-viewport">
+      <div class="brand-marquee-track">
+        <div class="brand-marquee-group">
+          <div class="brand-logo-chip"><img src="/assets/images/logos/Adani.jpg" alt="Adani" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/EMMVEE.png" alt="Emmvee" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/LOGO.png" alt="Brand logo" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/Renewsys.png" alt="Renewsys" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/SMA_Solar_idkl4eTfea_0.png" alt="SMA Solar" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/Sungrow.png" alt="Sungrow" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/havells-logo-png_seeklogo-343289.png" alt="Havells" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/microtek-logo-png_seeklogo-196359.png" alt="Microtek" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/premier-energies.b1bb2f7bbecd36942cfa.png" alt="Premier Energies" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/vguard.png" alt="V-Guard" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/waree.png" alt="Waaree" loading="lazy"></div>
+        </div>
+        <div class="brand-marquee-group" aria-hidden="true">
+          <div class="brand-logo-chip"><img src="/assets/images/logos/Adani.jpg" alt="Adani" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/EMMVEE.png" alt="Emmvee" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/LOGO.png" alt="Brand logo" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/Renewsys.png" alt="Renewsys" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/SMA_Solar_idkl4eTfea_0.png" alt="SMA Solar" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/Sungrow.png" alt="Sungrow" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/havells-logo-png_seeklogo-343289.png" alt="Havells" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/microtek-logo-png_seeklogo-196359.png" alt="Microtek" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/premier-energies.b1bb2f7bbecd36942cfa.png" alt="Premier Energies" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/vguard.png" alt="V-Guard" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/waree.png" alt="Waaree" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+    <p class="brand-marquee-disclaimer">All brand logos and trademarks are the property of their respective owners. Use of brand names is for identification purposes only.</p>
+  </section>
   <footer class="border-t border-slate-200 bg-white/90">
     <div class="mx-auto grid max-w-7xl gap-10 px-4 py-10 sm:px-6 md:grid-cols-3 lg:px-8">
       <div>

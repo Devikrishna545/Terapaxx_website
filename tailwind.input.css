@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@source "./**/*.{html,js}";
+
+@theme {
+  --color-terra-deep: #0f3d3e;
+  --color-terra-teal: #1f7a7a;
+  --color-terra-gold: #f2a900;
+  --color-terra-sand: #f6f4ef;
+  --color-terra-ink: #1c2430;
+}

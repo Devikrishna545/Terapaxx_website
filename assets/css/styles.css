@@ -28,6 +28,17 @@ h3 {
   box-shadow: 0 8px 30px rgba(16, 42, 67, 0.08);
 }
 
+.site-header.menu-open {
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 10px 28px rgba(16, 42, 67, 0.14);
+}
+
+.site-header > div {
+  position: relative;
+}
+
 .hero-grid {
   position: relative;
   overflow: hidden;
@@ -42,10 +53,123 @@ h3 {
   margin-top: 0.35rem;
   border-radius: 0.9rem;
   border: 1px solid rgba(15, 61, 62, 0.16);
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.97);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 14px 30px rgba(20, 55, 76, 0.16);
+}
+
+.site-header #mobileMenu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 0.35rem);
+  z-index: 60;
+  margin-top: 0.35rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(15, 61, 62, 0.16);
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 14px 30px rgba(20, 55, 76, 0.16);
+}
+
+/* ── Brand Marquee Strip ── */
+.brand-marquee {
+  /* Full-bleed: override any max-width parent */
+  width: 100%;
+  margin-top: 0;
+  border-top: 1px solid rgba(15, 61, 62, 0.22);
+  border-bottom: 1px solid rgba(15, 61, 62, 0.22);
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 0% 50%, rgba(242, 169, 0, 0.25) 0%, transparent 55%),
+    radial-gradient(ellipse at 100% 50%, rgba(31, 122, 122, 0.35) 0%, transparent 55%),
+    linear-gradient(105deg, #0d3838 0%, #125e5e 45%, #0f4d3f 100%);
+  box-shadow: 0 -4px 24px rgba(12, 43, 44, 0.18), 0 4px 24px rgba(12, 43, 44, 0.18);
+}
+
+.brand-marquee-heading {
+  padding: 0.9rem 1rem 0.2rem;
+  text-align: center;
+  color: rgba(220, 245, 238, 0.95);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.brand-marquee-viewport {
+  padding: 0.65rem 0;
+  overflow: hidden;
+  /* Fade edges so loop looks seamless */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+}
+
+.brand-marquee-track {
+  /* Single horizontal line that cannot break */
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: max-content;
+  gap: 0;
+  animation: brandSlide 26s linear infinite;
+  will-change: transform;
+}
+
+.brand-marquee-group {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 1rem;
+  /* Right padding equals the gap so the loop seam is invisible */
+  padding-right: 1rem;
+  flex-shrink: 0;
+}
+
+.brand-logo-chip {
+  flex: 0 0 auto;
+  height: 3.2rem;
+  width: 8.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22), 0 0 0 1px rgba(31,122,122,0.08);
+  padding: 0.4rem 0.7rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.brand-logo-chip:hover {
+  transform: scale(1.07);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
+}
+
+.brand-logo-chip img {
+  display: block;
+  max-height: 2rem;
+  max-width: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.brand-marquee-disclaimer {
+  margin: 0;
+  padding: 0.3rem 1rem 0.8rem;
+  text-align: center;
+  color: rgba(210, 238, 228, 0.75);
+  font-size: 0.68rem;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+@keyframes brandSlide {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .hero-gallery-layer {
@@ -176,10 +300,195 @@ h3 {
   outline-offset: 3px;
 }
 
+/* ── Floating Contact FAB ── */
+.contact-fab {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  z-index: 9000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.7rem;
+}
+
+.contact-fab-trigger {
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: 50%;
+  background: var(--brand-deep);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 22px rgba(15, 61, 62, 0.45);
+  transition: background 0.2s, transform 0.2s;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.contact-fab-trigger:hover {
+  background: var(--brand-teal);
+  transform: scale(1.06);
+}
+
+.contact-fab-trigger svg {
+  position: absolute;
+  transition: opacity 0.2s ease, transform 0.25s ease;
+}
+
+.contact-fab-trigger .fab-icon-chat {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.contact-fab-trigger .fab-icon-close {
+  opacity: 0;
+  transform: scale(0.5) rotate(-90deg);
+}
+
+.contact-fab.is-open .contact-fab-trigger {
+  background: var(--brand-teal);
+}
+
+.contact-fab.is-open .contact-fab-trigger .fab-icon-chat {
+  opacity: 0;
+  transform: scale(0.5) rotate(90deg);
+}
+
+.contact-fab.is-open .contact-fab-trigger .fab-icon-close {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.contact-fab-options {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.65rem;
+  pointer-events: none;
+  order: -1;
+}
+
+.contact-fab-item {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(0.6rem) scale(0.85);
+  transition: opacity 0.22s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+}
+
+.contact-fab.is-open .contact-fab-options {
+  pointer-events: auto;
+}
+
+.contact-fab.is-open .contact-fab-item {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.contact-fab.is-open .contact-fab-item:nth-child(1) { transition-delay: 0.04s; }
+.contact-fab.is-open .contact-fab-item:nth-child(2) { transition-delay: 0.1s; }
+
+.contact-fab-label {
+  background: rgba(20, 40, 50, 0.82);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.28rem 0.65rem;
+  border-radius: 2rem;
+  white-space: nowrap;
+  backdrop-filter: blur(4px);
+}
+
+.contact-fab-btn {
+  width: 2.9rem;
+  height: 2.9rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.contact-fab-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact-fab-wa .contact-fab-btn {
+  background: #25d366;
+}
+
+.contact-fab-call .contact-fab-btn {
+  background: var(--brand-teal);
+}
+
+/* ── Footer Credit ── */
+.devitechz-credit {
+  border-top: 1px solid rgba(148, 163, 184, 0.35);
+  padding: 0.9rem 1rem;
+  text-align: center;
+  background: linear-gradient(90deg, rgba(15, 61, 62, 0.05), rgba(31, 122, 122, 0.11), rgba(15, 61, 62, 0.05));
+}
+
+.devitechz-credit-text {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #334155;
+}
+
+.devitechz-credit a {
+  color: var(--brand-deep);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.devitechz-credit a:hover,
+.devitechz-credit a:focus-visible {
+  color: var(--brand-teal);
+  text-decoration: underline;
+}
+
+.devitechz-credit-mail {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: text-bottom;
+  text-decoration: none;
+}
+
+.devitechz-credit-mail svg {
+  display: block;
+}
+
+.devitechz-credit-mail:hover,
+.devitechz-credit-mail:focus-visible {
+  text-decoration: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-gallery-track,
   .hero-gallery-thumb {
     animation: none;
+  }
+
+  .brand-marquee-track {
+    animation: none;
+    /* Static fallback: center on screen */
+    justify-content: flex-start;
   }
 
   .reach-card {
@@ -190,5 +499,10 @@ h3 {
   .reach-card:focus-visible {
     transform: none;
     box-shadow: none;
+  }
+
+  .contact-fab-item,
+  .contact-fab-trigger svg {
+    transition: none;
   }
 }

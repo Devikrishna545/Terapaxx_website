@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/css/tailwind.css">
   <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
@@ -22,7 +22,7 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-20 items-center justify-between">
         <a href="/" class="flex items-center gap-3" aria-label="Terrapaxx home">
-          <img src="https://www.terrapaxx.com/assets/images/terrapaxx-logo.png" alt="Terrapaxx logo" class="h-11 w-auto" loading="lazy">
+          <img src="/assets/images/terrapaxx-logo.png" alt="Terrapaxx logo" class="h-11 w-auto" loading="lazy">
         </a>
         <nav class="hidden items-center gap-7 md:flex" aria-label="Main navigation">
           <a href="/" data-nav-link class="text-sm font-semibold text-terra-ink transition hover:text-terra-teal">Home</a>
@@ -55,23 +55,41 @@
     </div>
 
     <section class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      <button class="gallery-card reveal overflow-hidden rounded-2xl bg-white text-left shadow-sm ring-1 ring-slate-200" data-gallery-item data-image="https://www.terrapaxx.com/assets/gallery/1.jpeg" data-alt="Completed project 1">
-        <img src="https://www.terrapaxx.com/assets/gallery/1.jpeg" alt="Completed project 1" class="h-60 w-full object-cover" loading="lazy">
+      <button class="gallery-card reveal overflow-hidden rounded-2xl bg-white text-left shadow-sm ring-1 ring-slate-200" data-gallery-item data-image="/assets/images/gallery/1.jpeg" data-alt="Completed project 1">
+        <img src="/assets/images/gallery/1.jpeg" alt="Completed project 1" class="h-60 w-full object-cover" loading="lazy">
       </button>
-      <button class="gallery-card reveal overflow-hidden rounded-2xl bg-white text-left shadow-sm ring-1 ring-slate-200" data-gallery-item data-image="https://www.terrapaxx.com/assets/gallery/2.jpeg" data-alt="Completed project 2">
-        <img src="https://www.terrapaxx.com/assets/gallery/2.jpeg" alt="Completed project 2" class="h-60 w-full object-cover" loading="lazy">
+      <button class="gallery-card reveal overflow-hidden rounded-2xl bg-white text-left shadow-sm ring-1 ring-slate-200" data-gallery-item data-image="/assets/images/gallery/2.jpeg" data-alt="Completed project 2">
+        <img src="/assets/images/gallery/2.jpeg" alt="Completed project 2" class="h-60 w-full object-cover" loading="lazy">
       </button>
-      <button class="gallery-card reveal overflow-hidden rounded-2xl bg-white text-left shadow-sm ring-1 ring-slate-200" data-gallery-item data-image="https://www.terrapaxx.com/assets/gallery/3.jpeg" data-alt="Completed project 3">
-        <img src="https://www.terrapaxx.com/assets/gallery/3.jpeg" alt="Completed project 3" class="h-60 w-full object-cover" loading="lazy">
+      <button class="gallery-card reveal overflow-hidden rounded-2xl bg-white text-left shadow-sm ring-1 ring-slate-200" data-gallery-item data-image="/assets/images/gallery/3.jpeg" data-alt="Completed project 3">
+        <img src="/assets/images/gallery/3.jpeg" alt="Completed project 3" class="h-60 w-full object-cover" loading="lazy">
       </button>
-      <button class="gallery-card reveal overflow-hidden rounded-2xl bg-white text-left shadow-sm ring-1 ring-slate-200" data-gallery-item data-image="https://www.terrapaxx.com/assets/gallery/8.jpeg" data-alt="Completed project 4">
-        <img src="https://www.terrapaxx.com/assets/gallery/8.jpeg" alt="Completed project 4" class="h-60 w-full object-cover" loading="lazy">
+      <button class="gallery-card reveal overflow-hidden rounded-2xl bg-white text-left shadow-sm ring-1 ring-slate-200" data-gallery-item data-image="/assets/images/gallery/8.jpeg" data-alt="Completed project 4">
+        <img src="/assets/images/gallery/8.jpeg" alt="Completed project 4" class="h-60 w-full object-cover" loading="lazy">
       </button>
-      <button class="gallery-card reveal overflow-hidden rounded-2xl bg-white text-left shadow-sm ring-1 ring-slate-200" data-gallery-item data-image="https://www.terrapaxx.com/assets/gallery/14.jpeg" data-alt="Completed project 5">
-        <img src="https://www.terrapaxx.com/assets/gallery/14.jpeg" alt="Completed project 5" class="h-60 w-full object-cover" loading="lazy">
+      <button class="gallery-card reveal overflow-hidden rounded-2xl bg-white text-left shadow-sm ring-1 ring-slate-200" data-gallery-item data-image="/assets/images/gallery/14.jpeg" data-alt="Completed project 5">
+        <img src="/assets/images/gallery/14.jpeg" alt="Completed project 5" class="h-60 w-full object-cover" loading="lazy">
       </button>
-      <button class="gallery-card reveal overflow-hidden rounded-2xl bg-white text-left shadow-sm ring-1 ring-slate-200" data-gallery-item data-image="https://www.terrapaxx.com/assets/gallery/21.jpg" data-alt="Completed project 6">
-        <img src="https://www.terrapaxx.com/assets/gallery/21.jpg" alt="Completed project 6" class="h-60 w-full object-cover" loading="lazy">
+      <button class="gallery-card reveal overflow-hidden rounded-2xl bg-white text-left shadow-sm ring-1 ring-slate-200" data-gallery-item data-image="/assets/images/gallery/21.jpg" data-alt="Completed project 6">
+        <img src="/assets/images/gallery/21.jpg" alt="Completed project 6" class="h-60 w-full object-cover" loading="lazy">
+      </button>
+      <button class="gallery-card reveal overflow-hidden rounded-2xl bg-white text-left shadow-sm ring-1 ring-slate-200" data-gallery-item data-image="/assets/images/gallery/7.jpeg" data-alt="Completed project 7">
+        <img src="/assets/images/gallery/7.jpeg" alt="Completed project 7" class="h-60 w-full object-cover" loading="lazy">
+      </button>
+      <button class="gallery-card reveal overflow-hidden rounded-2xl bg-white text-left shadow-sm ring-1 ring-slate-200" data-gallery-item data-image="/assets/images/gallery/18.jpeg" data-alt="Completed project 8">
+        <img src="/assets/images/gallery/18.jpeg" alt="Completed project 8" class="h-60 w-full object-cover" loading="lazy">
+      </button>
+      <button class="gallery-card reveal overflow-hidden rounded-2xl bg-white text-left shadow-sm ring-1 ring-slate-200" data-gallery-item data-image="/assets/images/gallery/22.jpg" data-alt="Completed project 9">
+        <img src="/assets/images/gallery/22.jpg" alt="Completed project 9" class="h-60 w-full object-cover" loading="lazy">
+      </button>
+      <button class="gallery-card reveal overflow-hidden rounded-2xl bg-white text-left shadow-sm ring-1 ring-slate-200" data-gallery-item data-image="/assets/images/gallery/solarimage_01.jpeg" data-alt="Completed project 10">
+        <img src="/assets/images/gallery/solarimage_01.jpeg" alt="Completed project 10" class="h-60 w-full object-cover" loading="lazy">
+      </button>
+      <button class="gallery-card reveal overflow-hidden rounded-2xl bg-white text-left shadow-sm ring-1 ring-slate-200" data-gallery-item data-image="/assets/images/gallery/solarimage_02.jpeg" data-alt="Completed project 11">
+        <img src="/assets/images/gallery/solarimage_02.jpeg" alt="Completed project 11" class="h-60 w-full object-cover" loading="lazy">
+      </button>
+      <button class="gallery-card reveal overflow-hidden rounded-2xl bg-white text-left shadow-sm ring-1 ring-slate-200" data-gallery-item data-image="/assets/images/gallery/solar_image_03.jpeg" data-alt="Completed project 12">
+        <img src="/assets/images/gallery/solar_image_03.jpeg" alt="Completed project 12" class="h-60 w-full object-cover" loading="lazy">
       </button>
     </section>
   </main>
@@ -84,6 +102,40 @@
     </div>
   </div>
 
+  <section class="brand-marquee" aria-label="Partner brands">
+    <p class="brand-marquee-heading">Brands We Work With</p>
+    <div class="brand-marquee-viewport">
+      <div class="brand-marquee-track">
+        <div class="brand-marquee-group">
+          <div class="brand-logo-chip"><img src="/assets/images/logos/Adani.jpg" alt="Adani" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/EMMVEE.png" alt="Emmvee" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/LOGO.png" alt="Brand logo" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/Renewsys.png" alt="Renewsys" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/SMA_Solar_idkl4eTfea_0.png" alt="SMA Solar" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/Sungrow.png" alt="Sungrow" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/havells-logo-png_seeklogo-343289.png" alt="Havells" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/microtek-logo-png_seeklogo-196359.png" alt="Microtek" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/premier-energies.b1bb2f7bbecd36942cfa.png" alt="Premier Energies" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/vguard.png" alt="V-Guard" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/waree.png" alt="Waaree" loading="lazy"></div>
+        </div>
+        <div class="brand-marquee-group" aria-hidden="true">
+          <div class="brand-logo-chip"><img src="/assets/images/logos/Adani.jpg" alt="Adani" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/EMMVEE.png" alt="Emmvee" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/LOGO.png" alt="Brand logo" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/Renewsys.png" alt="Renewsys" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/SMA_Solar_idkl4eTfea_0.png" alt="SMA Solar" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/Sungrow.png" alt="Sungrow" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/havells-logo-png_seeklogo-343289.png" alt="Havells" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/microtek-logo-png_seeklogo-196359.png" alt="Microtek" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/premier-energies.b1bb2f7bbecd36942cfa.png" alt="Premier Energies" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/vguard.png" alt="V-Guard" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/waree.png" alt="Waaree" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+    <p class="brand-marquee-disclaimer">All brand logos and trademarks are the property of their respective owners. Use of brand names is for identification purposes only.</p>
+  </section>
   <footer class="border-t border-slate-200 bg-white/90">
     <div class="mx-auto grid max-w-7xl gap-10 px-4 py-10 sm:px-6 md:grid-cols-3 lg:px-8">
       <div>

@@ -13,24 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            terra: {
-              deep: '#0f3d3e',
-              teal: '#1f7a7a',
-              gold: '#f2a900',
-              sand: '#f6f4ef',
-              ink: '#1c2430'
-            }
-          }
-        }
-      }
-    };
-  </script>
+  <link rel="stylesheet" href="/assets/css/tailwind.css">
   <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
@@ -39,7 +22,7 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-20 items-center justify-between">
         <a href="/" class="flex items-center gap-3" aria-label="Terrapaxx home">
-          <img src="https://www.terrapaxx.com/assets/images/terrapaxx-logo.png" alt="Terrapaxx logo" class="h-11 w-auto" loading="lazy">
+          <img src="/assets/images/terrapaxx-logo.png" alt="Terrapaxx logo" class="h-11 w-auto" loading="lazy">
         </a>
         <nav class="hidden items-center gap-7 md:flex" aria-label="Main navigation">
           <a href="/" data-nav-link class="text-sm font-semibold text-terra-ink transition hover:text-terra-teal">Home</a>
@@ -67,7 +50,7 @@
   <main id="mainContent" class="mx-auto max-w-7xl px-4 pb-16 pt-24 sm:px-6 lg:px-8">
     <section class="reveal mt-8 rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200 sm:p-10">
       <p class="text-xs font-bold uppercase tracking-[0.18em] text-terra-teal">Products</p>
-      <h1 class="mt-2 text-4xl font-extrabold text-terra-deep sm:text-5xl">Energy Products in One Place</h1>
+      <h1 class="mt-2 text-4xl font-extrabold text-terra-deep sm:text-5xl">One stop for all your energy solutions</h1>
       <p class="mt-4 max-w-3xl text-slate-600">Our product line covers complete energy needs from generation and storage to heating and backup reliability. Below is a concise overview of our major offerings.</p>
       <div class="mt-6 flex flex-wrap gap-3 text-xs font-bold uppercase tracking-wide text-slate-600">
         <span class="rounded-full bg-slate-100 px-3 py-1">Solar Power</span>
@@ -78,55 +61,244 @@
     </section>
 
     <section class="mt-8 grid gap-6 md:grid-cols-2">
-      <article class="reveal overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-200">
-        <img src="https://www.terrapaxx.com/assets/images/solarimage.jpg" alt="Solar power systems" class="h-40 w-full object-cover" loading="lazy">
+      <article id="solarPowerCard" ondblclick="window.location.href='/products/solar-power/'" class="reveal overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-200 cursor-zoom-in">
+        <img src="/assets/images/solarimage.jpg" alt="Solar power systems" class="h-40 w-full object-cover" loading="lazy">
         <div class="p-6">
-          <h2 class="text-2xl font-bold text-terra-deep">Solar Power Systems</h2>
-          <p class="mt-3 text-sm leading-relaxed text-slate-600">Comprehensive SPV topologies from 500W to 100KW+ including standalone backup and grid-connected net-metering systems.</p>
-          <ul class="mt-4 space-y-2 text-sm text-slate-700">
-            <li>Polycrystalline modules with strong low-light performance (250W to 360W)</li>
-            <li>Inverter range from 1000 VA to 25 KVA with MPPT/PWM options</li>
-            <li>Single/three phase outputs with pure sine wave and protection features</li>
-          </ul>
+          <div class="flex items-start justify-between gap-3">
+            <h2 class="text-2xl font-bold text-terra-deep">Solar Power Systems</h2>
+            <span class="rounded-full bg-amber-100 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-amber-800">Detailed</span>
+          </div>
+
+          <div class="mt-4 max-h-[320px] space-y-5 overflow-y-auto pr-2 text-sm">
+            <section>
+              <h3 class="font-bold text-terra-deep">System Topologies</h3>
+              <ul class="mt-2 space-y-2 text-slate-700">
+                <li><strong>Standalone + Storage:</strong> Battery-backed, grid-independent power ideal for off-grid and critical backup.</li>
+                <li><strong>Grid-Connected Rooftop (Net Metering):</strong> Reduce bills and monetize surplus under FIT schemes.</li>
+                <li>Scalable architecture from <strong>500 W to 100 kW and beyond</strong>.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h3 class="font-bold text-terra-deep">Product Range</h3>
+              <div class="mt-2 overflow-x-auto">
+                <table class="min-w-full text-left text-xs">
+                  <thead class="bg-slate-100 text-slate-600">
+                    <tr>
+                      <th class="px-2 py-2 font-bold">System</th>
+                      <th class="px-2 py-2 font-bold">Capacity</th>
+                      <th class="px-2 py-2 font-bold">Use Case</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-slate-700">
+                    <tr class="border-b border-slate-100"><td class="px-2 py-2">Solar PCU (with storage)</td><td class="px-2 py-2">1 kW - 10 kW</td><td class="px-2 py-2">Off-grid, backup, residential</td></tr>
+                    <tr class="border-b border-slate-100"><td class="px-2 py-2">Grid Interactive Inverter</td><td class="px-2 py-2">10 kW - 100 kW+</td><td class="px-2 py-2">Rooftop, ground mount, MW-scale</td></tr>
+                    <tr class="border-b border-slate-100"><td class="px-2 py-2">Grid-Tie Inverter</td><td class="px-2 py-2">10 kW - 1 MW</td><td class="px-2 py-2">Rooftop, ground mount, utility</td></tr>
+                    <tr><td class="px-2 py-2">Balance of System (BOS)</td><td class="px-2 py-2">Any scale</td><td class="px-2 py-2">Structures, cabling, protection</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="mt-2 text-xs text-slate-600">BOS includes mounting structures, junction boxes, AC/DC decoupling, lightning arrestors and earthing kits.</p>
+            </section>
+
+            <section>
+              <h3 class="font-bold text-terra-deep">Solar Panels</h3>
+              <p class="mt-2 text-slate-700">Polycrystalline, Bifacial and TOPCon panel options with strong durability and yield.</p>
+              <ul class="mt-2 space-y-2 text-slate-700">
+                <li>Ratings: 250 W to 360 W (poly) and up to 700 W+ (bifacial/TOPCon)</li>
+                <li>TOPCon: &gt;22% efficiency with better low-light and high-temperature performance</li>
+                <li>Bifacial: captures rear-side irradiance with up to 30% potential yield gain</li>
+              </ul>
+            </section>
+
+            <section>
+              <h3 class="font-bold text-terra-deep">Solar Inverters</h3>
+              <ul class="mt-2 space-y-2 text-slate-700">
+                <li>Rating: 1 kVA to 25 kVA</li>
+                <li>Input: 12 V to 360 V DC with wide PV range and MPPT/PWM support</li>
+                <li>Output: 230 V / 400-415 V AC, 50 Hz, pure sine wave, single/three phase</li>
+                <li>Grid-tie and backup variants with LCD and multi-level protections</li>
+              </ul>
+            </section>
+          </div>
+
+          <a href="/products/solar-power/" class="mt-5 inline-flex rounded-full border border-terra-deep px-4 py-2 text-sm font-bold text-terra-deep transition hover:bg-slate-100">Open Full Solar Power Page</a>
         </div>
       </article>
 
-      <article class="reveal overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-200">
-        <img src="https://www.terrapaxx.com/assets/images/solar-water-heater.jpg" alt="Solar water heaters" class="h-40 w-full object-cover" loading="lazy">
+      <article id="solarWaterCard" ondblclick="window.location.href='/products/solar-water/'" class="reveal overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-200 cursor-zoom-in">
+        <img src="/assets/images/solar-water-heater.jpg" alt="Solar water heaters" class="h-40 w-full object-cover" loading="lazy">
         <div class="p-6">
-          <h2 class="text-2xl font-bold text-terra-deep">Solar Water Heaters</h2>
-          <p class="mt-3 text-sm leading-relaxed text-slate-600">Efficient and cost-effective hot water systems for domestic and industrial use with capacities starting from 100 litres.</p>
-          <ul class="mt-4 space-y-2 text-sm text-slate-700">
-            <li>ETC collector technology for reliable thermal capture</li>
-            <li>Stainless steel and polymer tank options</li>
-            <li>High corrosion resistance and good heat retention</li>
-          </ul>
+          <div class="flex items-start justify-between gap-3">
+            <h2 class="text-2xl font-bold text-terra-deep">Solar Water Heaters</h2>
+            <span class="rounded-full bg-amber-100 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-amber-800">Detailed</span>
+          </div>
+
+          <div class="mt-4 max-h-[320px] space-y-5 overflow-y-auto pr-2 text-sm">
+            <section>
+              <h3 class="font-bold text-terra-deep">Why Solar Water Heating?</h3>
+              <p class="mt-2 text-slate-700">Runs on solar energy with near-zero recurring operating cost. Hot water is stored and available for day and night usage.</p>
+            </section>
+
+            <section>
+              <h3 class="font-bold text-terra-deep">Solutions For Every Scale</h3>
+              <ul class="mt-2 space-y-2 text-slate-700">
+                <li><strong>Domestic:</strong> Reliable daily hot water for homes, villas and apartments.</li>
+                <li><strong>Commercial & Industrial:</strong> Suitable for hotels, hospitals, hostels and process heating.</li>
+                <li><strong>Capacity:</strong> 100 litres onwards, sized to requirement.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h3 class="font-bold text-terra-deep">Product Highlights</h3>
+              <div class="mt-2 overflow-x-auto">
+                <table class="min-w-full text-left text-xs">
+                  <thead class="bg-slate-100 text-slate-600">
+                    <tr>
+                      <th class="px-2 py-2 font-bold">Feature</th>
+                      <th class="px-2 py-2 font-bold">Specification</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-slate-700">
+                    <tr class="border-b border-slate-100"><td class="px-2 py-2">Collector Type</td><td class="px-2 py-2">Evacuated Glass Tube (ETC)</td></tr>
+                    <tr class="border-b border-slate-100"><td class="px-2 py-2">Tank Material</td><td class="px-2 py-2">Stainless steel & food-grade polymer</td></tr>
+                    <tr class="border-b border-slate-100"><td class="px-2 py-2">Corrosion Resistance</td><td class="px-2 py-2">High, suitable for varied water quality</td></tr>
+                    <tr class="border-b border-slate-100"><td class="px-2 py-2">Thermal Retention</td><td class="px-2 py-2">Excellent overnight heat hold</td></tr>
+                    <tr class="border-b border-slate-100"><td class="px-2 py-2">Application</td><td class="px-2 py-2">Domestic & commercial</td></tr>
+                    <tr><td class="px-2 py-2">Capacity</td><td class="px-2 py-2">100 L onwards</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <section>
+              <h3 class="font-bold text-terra-deep">Key Benefits</h3>
+              <ul class="mt-2 space-y-2 text-slate-700">
+                <li>Zero operating cost with solar heating</li>
+                <li>ETC performs strongly in low-light and colder conditions</li>
+                <li>Food-grade storage and corrosion-resistant construction</li>
+                <li>Modular and scalable as capacity demand increases</li>
+              </ul>
+            </section>
+          </div>
+
+          <a href="/products/solar-water/" class="mt-5 inline-flex rounded-full border border-terra-deep px-4 py-2 text-sm font-bold text-terra-deep transition hover:bg-slate-100">Open Full Solar Water Page</a>
         </div>
       </article>
 
-      <article class="reveal overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-200">
-        <img src="https://www.terrapaxx.com/assets/images/ptr.png" alt="Home UPS and inverters" class="h-40 w-full object-cover" loading="lazy">
+      <article id="upsCard" ondblclick="window.location.href='/products/home-ups-inverter/'" class="reveal overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-200 cursor-zoom-in">
+        <img src="/assets/images/ptr.png" alt="Home UPS and inverters" class="h-40 w-full object-cover" loading="lazy">
         <div class="p-6">
-          <h2 class="text-2xl font-bold text-terra-deep">Home UPS / Inverters</h2>
-          <p class="mt-3 text-sm leading-relaxed text-slate-600">Reliable home and commercial backup solutions designed for stable output and intelligent protection during outages.</p>
-          <ul class="mt-4 space-y-2 text-sm text-slate-700">
-            <li>Sine wave inverter architecture with advanced digital controls</li>
-            <li>Wide input voltage acceptance and LCD parameter display</li>
-            <li>Compatible with flat plate, tubular and VRLA batteries</li>
-          </ul>
+          <div class="flex items-start justify-between gap-3">
+            <h2 class="text-2xl font-bold text-terra-deep">Home UPS / Inverters</h2>
+            <span class="rounded-full bg-amber-100 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-amber-800">Detailed</span>
+          </div>
+
+          <div class="mt-4 max-h-[320px] space-y-5 overflow-y-auto pr-2 text-sm">
+            <section>
+              <h3 class="font-bold text-terra-deep">Never Lose Power Again</h3>
+              <p class="mt-2 text-slate-700">Instant and seamless backup switching keeps homes and business operations running during grid outages.</p>
+            </section>
+
+            <section>
+              <h3 class="font-bold text-terra-deep">Who It's For</h3>
+              <ul class="mt-2 space-y-2 text-slate-700">
+                <li><strong>Residential:</strong> Supports lights, fans, refrigeration and essential appliances.</li>
+                <li><strong>Commercial & Industrial:</strong> Offices, shops, clinics and small industries with minimized downtime.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h3 class="font-bold text-terra-deep">Product Highlights</h3>
+              <div class="mt-2 overflow-x-auto">
+                <table class="min-w-full text-left text-xs">
+                  <thead class="bg-slate-100 text-slate-600">
+                    <tr>
+                      <th class="px-2 py-2 font-bold">Feature</th>
+                      <th class="px-2 py-2 font-bold">Specification</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-slate-700">
+                    <tr class="border-b border-slate-100"><td class="px-2 py-2">Output Waveform</td><td class="px-2 py-2">Pure Sine Wave</td></tr>
+                    <tr class="border-b border-slate-100"><td class="px-2 py-2">Technology</td><td class="px-2 py-2">IGBT-based SPWM</td></tr>
+                    <tr class="border-b border-slate-100"><td class="px-2 py-2">Input Voltage</td><td class="px-2 py-2">Wide range for weak grid conditions</td></tr>
+                    <tr class="border-b border-slate-100"><td class="px-2 py-2">Display</td><td class="px-2 py-2">LCD parameter display</td></tr>
+                    <tr class="border-b border-slate-100"><td class="px-2 py-2">Battery Compatibility</td><td class="px-2 py-2">Flat Plate, Tubular, VRLA (SMF)</td></tr>
+                    <tr><td class="px-2 py-2">Application</td><td class="px-2 py-2">Domestic & commercial</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <section>
+              <h3 class="font-bold text-terra-deep">Key Benefits</h3>
+              <ul class="mt-2 space-y-2 text-slate-700">
+                <li>Pure sine output for sensitive electronics and motor loads</li>
+                <li>IGBT SPWM architecture for reliable and efficient operation</li>
+                <li>Wide input tolerance for unstable utility supply</li>
+                <li>Built-in protections for overload, over-charge, deep discharge and short-circuit</li>
+                <li>Scalable sizing for small homes to commercial use cases</li>
+              </ul>
+            </section>
+          </div>
+
+          <a href="/products/home-ups-inverter/" class="mt-5 inline-flex rounded-full border border-terra-deep px-4 py-2 text-sm font-bold text-terra-deep transition hover:bg-slate-100">Open Full UPS/Inverter Page</a>
         </div>
       </article>
 
-      <article class="reveal overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-200">
-        <img src="https://www.terrapaxx.com/assets/images/batry.jpg" alt="Inverter batteries" class="h-40 w-full object-cover" loading="lazy">
+      <article id="batteryCard" ondblclick="window.location.href='/products/inverter-batteries/'" class="reveal overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-200 cursor-zoom-in">
+        <img src="/assets/images/batry.jpg" alt="Inverter batteries" class="h-40 w-full object-cover" loading="lazy">
         <div class="p-6">
-          <h2 class="text-2xl font-bold text-terra-deep">Inverter Batteries</h2>
-          <p class="mt-3 text-sm leading-relaxed text-slate-600">Durable power storage batteries for inverter, UPS and solar applications across homes and offices.</p>
-          <ul class="mt-4 space-y-2 text-sm text-slate-700">
-            <li>Robust tubular plate technology</li>
-            <li>Deep cycling performance for dependable backup</li>
-            <li>Low maintenance with extended service life</li>
-          </ul>
+          <div class="flex items-start justify-between gap-3">
+            <h2 class="text-2xl font-bold text-terra-deep">Inverter Batteries</h2>
+            <span class="rounded-full bg-amber-100 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-amber-800">Detailed</span>
+          </div>
+
+          <div class="mt-4 max-h-[320px] space-y-5 overflow-y-auto pr-2 text-sm">
+            <section>
+              <h3 class="font-bold text-terra-deep">The Power Behind Your Power</h3>
+              <p class="mt-2 text-slate-700">A backup system is only as reliable as the battery running it. Terrapaxx inverter batteries are built for deep, repeated cycling and long-lasting performance for homes, offices, and solar installations.</p>
+            </section>
+
+            <section>
+              <h3 class="font-bold text-terra-deep">Tubular Technology - Built to Last</h3>
+              <p class="mt-2 text-slate-700">Tubular plate construction handles frequent deep discharge cycles with significantly better real-world longevity than conventional flat plate batteries.</p>
+              <ul class="mt-2 space-y-2 text-slate-700">
+                <li><strong>Ideal for:</strong> regions with frequent or prolonged power cuts</li>
+                <li><strong>Ideal for:</strong> solar energy storage applications</li>
+                <li><strong>Ideal for:</strong> homes and offices with high daily backup demand</li>
+              </ul>
+            </section>
+
+            <section>
+              <h3 class="font-bold text-terra-deep">Key Benefits</h3>
+              <div class="mt-2 overflow-x-auto">
+                <table class="min-w-full text-left text-xs">
+                  <thead class="bg-slate-100 text-slate-600">
+                    <tr>
+                      <th class="px-2 py-2 font-bold">Feature</th>
+                      <th class="px-2 py-2 font-bold">Advantage</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-slate-700">
+                    <tr class="border-b border-slate-100"><td class="px-2 py-2">Tubular Plate Design</td><td class="px-2 py-2">Higher energy density and longer cycle life</td></tr>
+                    <tr class="border-b border-slate-100"><td class="px-2 py-2">Deep Cycle Capability</td><td class="px-2 py-2">Reliable repeated charge-discharge performance</td></tr>
+                    <tr class="border-b border-slate-100"><td class="px-2 py-2">Low Maintenance</td><td class="px-2 py-2">Less topping-up and reduced downtime</td></tr>
+                    <tr class="border-b border-slate-100"><td class="px-2 py-2">Long Service Life</td><td class="px-2 py-2">Lower total ownership cost over time</td></tr>
+                    <tr><td class="px-2 py-2">Solar Compatible</td><td class="px-2 py-2">Engineered for inverter and SPV systems</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <section>
+              <h3 class="font-bold text-terra-deep">Why Tubular Over Flat Plate?</h3>
+              <p class="mt-2 text-slate-700">Flat plate batteries work, but tubular batteries endure. The tubular spine design resists active material shedding, resulting in more usable cycles, longer life, and better value over time.</p>
+              <p class="mt-2 text-slate-700">Available in multiple capacities to match inverter size and backup duration. Pairs with Terrapaxx inverters and solar PCUs for optimized performance.</p>
+            </section>
+          </div>
+
+          <a href="/products/inverter-batteries/" class="mt-5 inline-flex rounded-full border border-terra-deep px-4 py-2 text-sm font-bold text-terra-deep transition hover:bg-slate-100">Open Full Battery Page</a>
         </div>
       </article>
     </section>
@@ -138,6 +310,40 @@
     </section>
   </main>
 
+  <section class="brand-marquee" aria-label="Partner brands">
+    <p class="brand-marquee-heading">Brands We Work With</p>
+    <div class="brand-marquee-viewport">
+      <div class="brand-marquee-track">
+        <div class="brand-marquee-group">
+          <div class="brand-logo-chip"><img src="/assets/images/logos/Adani.jpg" alt="Adani" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/EMMVEE.png" alt="Emmvee" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/LOGO.png" alt="Brand logo" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/Renewsys.png" alt="Renewsys" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/SMA_Solar_idkl4eTfea_0.png" alt="SMA Solar" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/Sungrow.png" alt="Sungrow" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/havells-logo-png_seeklogo-343289.png" alt="Havells" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/microtek-logo-png_seeklogo-196359.png" alt="Microtek" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/premier-energies.b1bb2f7bbecd36942cfa.png" alt="Premier Energies" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/vguard.png" alt="V-Guard" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/waree.png" alt="Waaree" loading="lazy"></div>
+        </div>
+        <div class="brand-marquee-group" aria-hidden="true">
+          <div class="brand-logo-chip"><img src="/assets/images/logos/Adani.jpg" alt="Adani" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/EMMVEE.png" alt="Emmvee" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/LOGO.png" alt="Brand logo" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/Renewsys.png" alt="Renewsys" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/SMA_Solar_idkl4eTfea_0.png" alt="SMA Solar" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/Sungrow.png" alt="Sungrow" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/havells-logo-png_seeklogo-343289.png" alt="Havells" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/microtek-logo-png_seeklogo-196359.png" alt="Microtek" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/premier-energies.b1bb2f7bbecd36942cfa.png" alt="Premier Energies" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/vguard.png" alt="V-Guard" loading="lazy"></div>
+          <div class="brand-logo-chip"><img src="/assets/images/logos/waree.png" alt="Waaree" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+    <p class="brand-marquee-disclaimer">All brand logos and trademarks are the property of their respective owners. Use of brand names is for identification purposes only.</p>
+  </section>
   <footer class="border-t border-slate-200 bg-white/90">
     <div class="mx-auto grid max-w-7xl gap-10 px-4 py-10 sm:px-6 md:grid-cols-3 lg:px-8">
       <div>
