@@ -26,6 +26,9 @@ temp/
 # Dependencies (if used later)
 node_modules/
 
+# Local build tools (platform-specific binaries)
+tools/
+
 # Environment files
 .env
 .env.*
