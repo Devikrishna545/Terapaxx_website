@@ -11,6 +11,11 @@
 4. Validate Web3Forms submission and error handling.
 5. Validate gallery modal behavior on touch and keyboard.
 
+## Infrastructure Setup
+- Domain registrar: BigRock (terrapaxx.com — DNS managed here)
+- Web hosting: CloudDexter (cPanel — website files go here)
+- DNS nameservers on BigRock must point to CloudDexter for the domain to resolve to the hosted site.
+
 ## Deployment Instructions (CloudDexter)
 1. Upload first to staging folder and verify all pages.
 2. Keep a backup of current live site before cutover.

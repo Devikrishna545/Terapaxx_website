@@ -120,13 +120,16 @@ If score is low, first optimize large images.
 
 ## 8) CloudDexter deployment checklist
 
-1. Upload to staging folder first.
-2. Open all routes in staging.
-3. Test all contact links on production.
-4. Backup current live site.
-5. Move new site to document root.
-6. Verify SSL and redirect behavior from .htaccess.
-7. Keep rollback copy for safety.
+> Note: terrapaxx.com domain is registered on BigRock. Hosting (cPanel, file uploads) is on CloudDexter. These are two separate services.
+
+1. Log in to CloudDexter client portal → go to your hosting account → open cPanel.
+2. Upload to staging folder first (inside public_html/staging/).
+3. Open all routes in staging to check images and styles.
+4. Test all contact links on staging.
+5. Backup current live site before going live.
+6. Move new site files to document root (public_html/).
+7. Verify SSL and redirect behavior from .htaccess.
+8. Keep rollback copy for safety.
 
 ## 9) Common beginner mistakes to avoid
 
