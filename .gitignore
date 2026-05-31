@@ -33,3 +33,5 @@ tools/
 .env
 .env.*
 !.env.example
+# zip files
+*.zip
