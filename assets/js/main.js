@@ -138,7 +138,7 @@
     var creditStrip = document.createElement("div");
     creditStrip.className = "devitechz-credit";
     creditStrip.innerHTML =
-      '<p class="devitechz-credit-text">Designed &amp; Developed by <a href="https://devikrishna545.github.io" target="_blank" rel="noopener">DeviTechz | Devi Krishna</a> · <a class="devitechz-credit-mail" href="mailto:devikrishna545@gmail.com?subject=Freelance%20Enquiry" aria-label="Email Devi Krishna">' +
+      '<p class="devitechz-credit-text">Designed &amp; Developed by <a href="https://devikrishna545.github.io" target="_blank" rel="noopener">Devi Krishna</a> · <a class="devitechz-credit-mail" href="mailto:devikrishna545@gmail.com?subject=Freelance%20Enquiry" aria-label="Email Devi Krishna">' +
       '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" ry="2"/><path d="m3 7 9 6 9-6"/></svg>' +
       '</a></p>';
 
